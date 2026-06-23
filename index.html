@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>श्री राम मोबाइल स्टोर</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red:        #C8102E;
+      --red-dark:   #9B0B22;
+      --red-light:  #E8314D;
+      --white:      #FFFFFF;
+      --off-white:  #FFF5F6;
+      --text-dark:  #1A1A1A;
+      --text-mid:   #444444;
+    }
+
+    body {
+      font-family: 'Tiro Devanagari Hindi', serif;
+      color: var(--text-dark);
+      background: var(--white);
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, var(--red-dark) 0%, var(--red) 60%, var(--red-light) 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 48px 20px 36px;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .header-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+      padding: 5px 18px;
+      font-size: 13px;
+      margin-bottom: 16px;
+      font-family: 'Tiro Devanagari Hindi', serif;
+    }
+    header h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      letter-spacing: -1px;
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+    header h1 span { color: rgba(255,255,255,0.7); }
+    .header-hindi {
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+      opacity: 0.9;
+      margin-bottom: 10px;
+      font-family: 'Tiro Devanagari Hindi', serif;
+    }
+    header p.tagline {
+      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+      opacity: 0.88;
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.8;
+      font-family: 'Tiro Devanagari Hindi', serif;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--red-dark);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-family: 'Tiro Devanagari Hindi', serif;
+      font-size: 15px;
+      padding: 14px 20px;
+      transition: background 0.2s, color 0.2s;
+    }
+    nav a:hover { background: var(--red); color: var(--white); }
+
+    /* HERO BAND */
+    .hero-band {
+      background: var(--off-white);
+      border-bottom: 3px solid var(--red);
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .hero-band h2 {
+      font-family: 'Tiro Devanagari Hindi', serif;
+      font-size: clamp(1.3rem, 3.5vw, 1.9rem);
+      color: var(--red);
+      margin-bottom: 12px;
+    }
+    .hero-band p {
+      max-width: 640px;
+      margin: 0 auto;
+      color: var(--text-mid);
+      line-height: 1.9;
+      font-size: 1rem;
+    }
+
+    /* SECTIONS */
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 56px 24px;
+    }
+    .section-title {
+      font-family: 'Tiro Devanagari Hindi', serif;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      color: var(--red-dark);
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 4px;
+      background: var(--red);
+      border-radius: 2px;
+      margin-top: 6px;
+    }
+    .section-subtitle {
+      color: var(--text-mid);
+      margin-bottom: 36px;
+      margin-top: 8px;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* BRANDS */
+    .brands-grid { display: flex; flex-wrap: wrap; gap: 12px; }
+    .brand-pill {
+      background: var(--white);
+      border: 2px solid var(--red);
+      color: var(--red-dark);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      border-radius: 30px;
+      padding: 8px 20px;
+      transition: background 0.2s, color 0.2s;
+      cursor: default;
+    }
+    .brand-pill:hover { background: var(--red); color: var(--white); }
+
+    /* ACCESSORIES */
+    .acc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 20px;
+    }
+    .acc-card {
+      background: var(--white);
+      border: 1.5px solid #F0D0D4;
+      border-radius: 12px;
+      padding: 24px 18px;
+      text-align: center;
+      transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+    }
+    .acc-card:hover {
+      border-color: var(--red);
+      box-shadow: 0 6px 24px rgba(200,16,46,0.12);
+      transform: translateY(-3px);
+    }
+    .acc-icon { font-size: 2rem; margin-bottom: 10px; }
+    .acc-card h4 {
+      font-family: 'Tiro Devanagari Hindi', serif;
+      font-size: 15px;
+      color: var(--text-dark);
+    }
+
+    /* DIVIDER */
+    .red-divider {
+      background: var(--red);
+      height: 3px;
+      max-width: 1100px;
+      margin: 0 auto;
+      border-radius: 2px;
+    }
+    .section-alt { background: var(--off-white); }
+
+    /* REPAIR */
+    .repair-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 16px;
+    }
+    .repair-item {
+      background: var(--white);
+      border-left: 4px solid var(--red);
+      border-radius: 0 10px 10px 0;
+      padding: 16px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 15px;
+      color: var(--text-dark);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      line-height: 1.5;
+    }
+    .repair-item span.check {
+      color: var(--red);
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    /* WHY CHOOSE */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 20px;
+    }
+    .why-card {
+      background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%);
+      color: var(--white);
+      border-radius: 12px;
+      padding: 26px 22px;
+      font-size: 15px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      line-height: 1.6;
+    }
+    .why-card .tick { font-size: 20px; flex-shrink: 0; }
+
+    /* OFFERS */
+    .offers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 20px;
+    }
+    .offer-card {
+      background: var(--white);
+      border: 2px solid var(--red);
+      border-radius: 12px;
+      padding: 24px 18px;
+      text-align: center;
+    }
+    .offer-card .offer-icon { font-size: 2rem; margin-bottom: 8px; }
+    .offer-card p {
+      font-size: 15px;
+      color: var(--red-dark);
+      line-height: 1.6;
+    }
+
+    /* CONTACT */
+    .contact-box {
+      background: linear-gradient(135deg, var(--red-dark), var(--red));
+      color: var(--white);
+      border-radius: 16px;
+      padding: 44px 36px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 28px;
+      text-align: center;
+    }
+    .contact-item .c-icon { font-size: 2rem; margin-bottom: 8px; }
+    .contact-item h4 {
+      font-size: 13px;
+      letter-spacing: 1px;
+      opacity: 0.75;
+      margin-bottom: 8px;
+      font-family: 'Tiro Devanagari Hindi', serif;
+    }
+    .contact-item p {
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .contact-item a { color: var(--white); text-decoration: none; }
+
+    /* FOOTER */
+    footer {
+      background: var(--red-dark);
+      color: rgba(255,255,255,0.75);
+      text-align: center;
+      padding: 28px 20px;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+    footer strong { color: var(--white); }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-badge">आपका विश्वसनीय मोबाइल साथी</div>
+  <h1>SREE RAM<br/><span>MOBILE STORE</span></h1>
+  <div class="header-hindi">श्री राम मोबाइल स्टोर</div>
+  <p class="tagline">नवीनतम स्मार्टफोन · असली एक्सेसरीज़ · तेज़ मरम्मत सेवा</p>
+</header>
+
+<!-- NAV -->
+<nav>
+  <a href="#smartphones">स्मार्टफोन</a>
+  <a href="#accessories">एक्सेसरीज़</a>
+  <a href="#repairs">मरम्मत</a>
+  <a href="#offers">ऑफर</a>
+  <a href="#contact">संपर्क</a>
+</nav>
+
+<!-- HERO BAND -->
+<div class="hero-band">
+  <h2>आपका भरोसेमंद मोबाइल और एक्सेसरीज़ केंद्र</h2>
+  <p>जहाँ तकनीक मिलती है किफ़ायत से। नवीनतम स्मार्टफोन, प्रीमियम एक्सेसरीज़ और भरोसेमंद मरम्मत सेवाएँ — सब एक ही छत के नीचे।</p>
+</div>
+
+<!-- SMARTPHONES -->
+<div class="section" id="smartphones">
+  <h2 class="section-title">नवीनतम स्मार्टफोन देखें</h2>
+  <p class="section-subtitle">शीर्ष ब्रांड, बेहतरीन प्रदर्शन, प्रतिस्पर्धी कीमत।</p>
+  <div class="brands-grid">
+    <div class="brand-pill">Apple</div>
+    <div class="brand-pill">Samsung</div>
+    <div class="brand-pill">Vivo</div>
+    <div class="brand-pill">Oppo</div>
+    <div class="brand-pill">Realme</div>
+    <div class="brand-pill">Xiaomi</div>
+    <div class="brand-pill">OnePlus</div>
+    <div class="brand-pill">और भी</div>
+  </div>
+</div>
+
+<div class="red-divider"></div>
+
+<!-- ACCESSORIES -->
+<div class="section-alt">
+  <div class="section" id="accessories">
+    <h2 class="section-title">मोबाइल एक्सेसरीज़</h2>
+    <p class="section-subtitle">आपके डिवाइस को पावर, सुरक्षा और बेहतर बनाने के लिए सब कुछ।</p>
+    <div class="acc-grid">
+      <div class="acc-card"><div class="acc-icon">⚡</div><h4>फास्ट चार्जर</h4></div>
+      <div class="acc-card"><div class="acc-icon">🎧</div><h4>ब्लूटूथ ईयरबड्स</h4></div>
+      <div class="acc-card"><div class="acc-icon">⌚</div><h4>स्मार्ट वॉच</h4></div>
+      <div class="acc-card"><div class="acc-icon">🔋</div><h4>पावर बैंक</h4></div>
+      <div class="acc-card"><div class="acc-icon">🛡️</div><h4>टेम्पर्ड ग्लास</h4></div>
+      <div class="acc-card"><div class="acc-icon">📱</div><h4>प्रीमियम फोन कवर</h4></div>
+      <div class="acc-card"><div class="acc-icon">🔊</div><h4>वायरलेस स्पीकर</h4></div>
+      <div class="acc-card"><div class="acc-icon">🔌</div><h4>डेटा केबल</h4></div>
+    </div>
+  </div>
+</div>
+
+<div class="red-divider"></div>
+
+<!-- REPAIRS -->
+<div class="section" id="repairs">
+  <h2 class="section-title">मोबाइल मरम्मत सेवाएँ</h2>
+  <p class="section-subtitle">तेज़, भरोसेमंद और विशेषज्ञ मरम्मत — जिस पर आप भरोसा कर सकते हैं।</p>
+  <div class="repair-grid">
+    <div class="repair-item"><span class="check">✓</span> स्क्रीन बदलना</div>
+    <div class="repair-item"><span class="check">✓</span> बैटरी बदलना</div>
+    <div class="repair-item"><span class="check">✓</span> चार्जिंग पोर्ट मरम्मत</div>
+    <div class="repair-item"><span class="check">✓</span> सॉफ़्टवेयर अपडेट</div>
+    <div class="repair-item"><span class="check">✓</span> पानी से नुकसान का हल</div>
+    <div class="repair-item"><span class="check">✓</span> कैमरा मरम्मत</div>
+  </div>
+</div>
+
+<div class="red-divider"></div>
+
+<!-- WHY CHOOSE -->
+<div class="section-alt">
+  <div class="section">
+    <h2 class="section-title">श्री राम को क्यों चुनें?</h2>
+    <p class="section-subtitle">हम सिर्फ फोन नहीं बेचते — हम विश्वास बनाते हैं।</p>
+    <div class="why-grid">
+      <div class="why-card"><span class="tick">✔</span> असली उत्पाद और एक्सेसरीज़</div>
+      <div class="why-card"><span class="tick">✔</span> बाज़ार में सबसे अच्छी कीमत</div>
+      <div class="why-card"><span class="tick">✔</span> नवीनतम स्मार्टफोन संग्रह</div>
+      <div class="why-card"><span class="tick">✔</span> तेज़ और भरोसेमंद मरम्मत</div>
+      <div class="why-card"><span class="tick">✔</span> मित्रवत ग्राहक सहायता</div>
+      <div class="why-card"><span class="tick">✔</span> विश्वसनीय स्थानीय मोबाइल स्टोर</div>
+    </div>
+  </div>
+</div>
+
+<div class="red-divider"></div>
+
+<!-- SPECIAL OFFERS -->
+<div class="section" id="offers">
+  <h2 class="section-title">विशेष ऑफर</h2>
+  <p class="section-subtitle">हमारे ताज़ा ऑफर न चूकें — सीमित समय के लिए!</p>
+  <div class="offers-grid">
+    <div class="offer-card"><div class="offer-icon">🎉</div><p>स्मार्टफोन पर एक्सक्लूसिव छूट</p></div>
+    <div class="offer-card"><div class="offer-icon">🔄</div><p>एक्सचेंज ऑफर उपलब्ध</p></div>
+    <div class="offer-card"><div class="offer-icon">🎊</div><p>त्योहारी विशेष डील</p></div>
+    <div class="offer-card"><div class="offer-icon">💰</div><p>एक्सेसरीज़ किफ़ायती दामों पर</p></div>
+  </div>
+</div>
+
+<div class="red-divider"></div>
+
+<!-- CONTACT -->
+<div class="section" id="contact">
+  <h2 class="section-title">संपर्क करें</h2>
+  <p class="section-subtitle">हम सप्ताह के सातों दिन खुले हैं — आइए मिलिए!</p>
+  <div class="contact-box">
+    <div class="contact-item">
+      <div class="c-icon">📞</div>
+      <h4>फोन करें</h4>
+      <p><a href="tel:9682426684">9682426684</a></p>
+    </div>
+    <div class="contact-item">
+      <div class="c-icon">📍</div>
+      <h4>हमसे मिलें</h4>
+      <p>श्री राम मोबाइल स्टोर<br/>आपके नज़दीकी मोबाइल केंद्र</p>
+    </div>
+    <div class="contact-item">
+      <div class="c-icon">⏰</div>
+      <h4>खुलने का समय</h4>
+      <p>सोमवार – रविवार<br/>सुबह 9:00 – रात 9:00</p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <strong>श्री राम मोबाइल स्टोर — SREE RAM MOBILE STORE</strong><br/>
+  नवीनतम स्मार्टफोन · असली एक्सेसरीज़ · तेज़ मरम्मत<br/>
+  गुणवत्ता, मूल्य और सेवा के लिए आपका विश्वसनीय मोबाइल साथी।
+</footer>
+
+</body>
+</html>
